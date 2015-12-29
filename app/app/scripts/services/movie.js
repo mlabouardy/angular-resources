@@ -1,0 +1,17 @@
+'use strict';
+
+/**
+ * @ngdoc service
+ * @name appApp.Movie
+ * @description
+ * # Movie
+ * Service in the appApp.
+ */
+angular.module('appApp')
+  .service('Movie', function ($resource) {
+    	return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id',{id:'@_id'},{
+    		update:{
+    			method:'PUT'
+    		}
+    	});
+  });
